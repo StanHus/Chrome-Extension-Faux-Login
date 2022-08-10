@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+.popup-modal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 15px;
+  background-color: blanchedalmond;
+  padding: 3em;
+  min-width: fit-content;
+  margin: 1em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

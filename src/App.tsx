@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PopUp from './components/Popup'
 import { setIdleTimeout } from './components/utils'
-import './css/style.css'
+import './css/style.scss'
 
 function App() {
   const userName = window.localStorage.getItem('userName')
@@ -15,9 +15,13 @@ function App() {
   }
 
   const logout = () => {
+    const logout = new Event('logout')
+    document.dispatchEvent(logout)
     setLoggedIn(false)
     localStorage.clear()
     setName('')
+    const event = new Event('closePopup')
+    document.dispatchEvent(event)
   }
 
   if (loggedIn) setIdleTimeout(5000)
@@ -33,7 +37,7 @@ function App() {
   return (
     <div className="App">
       {!loggedIn && (
-        <div>
+        <div className="login-page">
           <h1>Log In</h1>
           <input
             type="text"
@@ -42,19 +46,22 @@ function App() {
           />
           <button
             disabled={name === null || name === ''}
+            className="primary"
             onClick={() => login()}
           >
-            Click me to login
+            Login
           </button>
         </div>
       )}
       {loggedIn && (
-        <div>
+        <div className="user-page">
           <h1>Hi {userName}</h1>
-          <button onClick={() => logout()}>Log out</button>
+          <button className="primary" onClick={() => logout()}>
+            Log out
+          </button>
         </div>
       )}
-      {popupOpen && <PopUp />}
+      {popupOpen && loggedIn && <PopUp />}
     </div>
   )
 }

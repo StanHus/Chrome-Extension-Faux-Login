@@ -9,12 +9,17 @@ export default function PopUp() {
 
   return (
     <div className="popup-modal">
-      <h2>Are you lost, {userName}</h2>
+      <h2>Are you lost, {userName}?</h2>
       <div className="row">
-        <button onClick={() => window.open('https://help.nickelled.com/en/')}>
+        <button
+          className="secondary"
+          onClick={() => window.open('https://help.nickelled.com/en/')}
+        >
           Yes
         </button>
-        <button onClick={() => closeThis()}>No</button>
+        <button className="secondary" onClick={() => closeThis()}>
+          No
+        </button>
       </div>
     </div>
   )

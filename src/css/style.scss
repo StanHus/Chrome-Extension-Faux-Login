@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-size: 100%;
+  font-family: monospace;
+}
+
+.App {
+  align-items: center;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #fcee54;
+  flex-wrap: wrap;
+  transition-duration: 0.7s;
+}
+
+.popup-modal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 15px;
+  background-color: blanchedalmond;
+  padding: 3em;
+  min-width: fit-content;
+  margin: 1em;
+}
+
+.login-page {
+  input {
+    margin: 10px;
+    width: 75%;
+    height: 5%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    &:focus {
+      transform: scale(1.2);
+    }
+  }
+}
+
+button {
+  &.primary {
+    width: 100px;
+    margin-top: 20px;
+    background-color: #f5c2e0;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: black;
+    padding: 10px;
+    transition-duration: 0.4s;
+    &:not(:disabled):hover {
+      transform: scale(1.5);
+      transition-duration: 0.4s;
+      background-color: black;
+      color: white;
+    }
+    &:disabled {
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+      cursor: not-allowed;
+    }
+  }
+  &.secondary {
+    margin-top: 20px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: black;
+    padding: 10px;
+    transition-duration: 0.4s;
+    &:hover {
+      transform: scale(1.5);
+      transition-duration: 0.4s;
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

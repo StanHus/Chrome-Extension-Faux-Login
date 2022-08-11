@@ -10,8 +10,11 @@ function setIdleTimeout(millis: number) {
 
   function onExpires() {
     timeout = 0
-    const event = new Event('openPopup')
-    document.dispatchEvent(event)
+    const userName = window.localStorage.getItem('userName')
+    if (userName !== null && userName !== '') {
+      const event = new Event('openPopup')
+      document.dispatchEvent(event)
+    }
   }
 
   function onActivity() {

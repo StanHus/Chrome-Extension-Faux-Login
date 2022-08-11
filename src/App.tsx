@@ -34,6 +34,8 @@ function App() {
           setLoading(false)
           setError(true)
         })
+    } else {
+      setError(true)
     }
   }
 
@@ -59,12 +61,24 @@ function App() {
             placeholder="Enter your name"
             autoComplete="off"
             onChange={(e) => setName(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault()
+                attemptLogin()
+              }
+            }}
           />
           <input
             type="password"
             placeholder="Enter your password"
             autoComplete="off"
             onChange={(e) => setPassword(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault()
+                attemptLogin()
+              }
+            }}
           />
           {loading && <Spinner />}
           {error && <LoginErrorMessage />}
@@ -86,7 +100,7 @@ function App() {
           />
           <div>
             <h1>Hi {userName}</h1>
-            <button className="primary" onClick={() => logout()}>
+            <button className="primary" onClick={logout}>
               Log out
             </button>
           </div>

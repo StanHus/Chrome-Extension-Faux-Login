@@ -1,6 +1,6 @@
 {
-  "name": "Chrome React SEO Extension",
-  "description": "The power of React and TypeScript for building interactive Chrome extensions",
+  "name": "Faux Auth Extension",
+  "description": "My First Chrome React Extension",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
@@ -13,7 +13,7 @@
       "js": ["./static/js/main.js"]
     }
   ],
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
   "icons": {
     "16": "logo192.png",
     "48": "logo192.png",

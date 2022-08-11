@@ -10,6 +10,11 @@ const PopUp = () => {
   return (
     <div className="popup-modal">
       <h2>Are you lost, {userName}?</h2>
+      <img
+        className="gif small"
+        src="https://c.tenor.com/uaTT7uIRkzkAAAAC/minions-confuse.gif"
+        alt="minion-gif-hello"
+      />
       <div className="row">
         <button
           className="secondary"

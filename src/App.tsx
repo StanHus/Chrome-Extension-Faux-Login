@@ -78,11 +78,18 @@ function App() {
         </div>
       )}
       {loggedIn && (
-        <div className="user-page">
-          <h1>Hi {userName}</h1>
-          <button className="primary" onClick={() => logout()}>
-            Log out
-          </button>
+        <div className="user-page row">
+          <img
+            className="gif"
+            src="https://c.tenor.com/xX-ziMQRXVkAAAAC/minion-hello.gif"
+            alt="minion-gif-hello"
+          />
+          <div>
+            <h1>Hi {userName}</h1>
+            <button className="primary" onClick={() => logout()}>
+              Log out
+            </button>
+          </div>
         </div>
       )}
       {popupOpen && loggedIn && <PopUp />}

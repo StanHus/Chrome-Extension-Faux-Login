@@ -1,6 +1,12 @@
 body {
   margin: 0;
 }
+
+.App {
+  width: 400px;
+  height: 400px;
+}
+
 .popup-modal {
   position: fixed;
   bottom: 0;

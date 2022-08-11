@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function PopUp() {
+  const userName = window.localStorage.getItem('userName')
   const closeThis = () => {
     const event = new Event('closePopup')
     document.dispatchEvent(event)
@@ -8,12 +9,12 @@ export default function PopUp() {
 
   return (
     <div className="popup-modal">
-      <h2>Are you ok?</h2>
+      <h2>Are you lost, {userName}</h2>
       <div className="row">
-        <button onClick={() => (window.location.href = '/something')}>
-          Take me home
+        <button onClick={() => window.open('https://help.nickelled.com/en/')}>
+          Yes
         </button>
-        <button onClick={() => closeThis()}>Cancel</button>
+        <button onClick={() => closeThis()}>No</button>
       </div>
     </div>
   )

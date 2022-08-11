@@ -22,4 +22,17 @@ function setIdleTimeout(millis: number) {
   }
 }
 
-export { setIdleTimeout }
+const login = (name: string, password: string) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (name === 'Stan' && password === '123') {
+        window.localStorage.setItem('userName', name)
+        resolve('Success')
+      } else {
+        reject('Fail')
+      }
+    }, 2000)
+  })
+}
+
+export { setIdleTimeout, login }

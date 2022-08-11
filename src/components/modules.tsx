@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function PopUp() {
+const PopUp = () => {
   const userName = window.localStorage.getItem('userName')
-  const closeThis = () => {
+  const closePopup = () => {
     const event = new Event('closePopup')
     document.dispatchEvent(event)
   }
@@ -17,10 +17,16 @@ export default function PopUp() {
         >
           Yes
         </button>
-        <button className="secondary" onClick={() => closeThis()}>
+        <button className="secondary" onClick={() => closePopup()}>
           No
         </button>
       </div>
     </div>
   )
 }
+
+const Spinner = () => <div className="loading-spinner"></div>
+
+const LoginErrorMessage = () => <h2>Failed to log in, try again</h2>
+
+export { Spinner, PopUp, LoginErrorMessage }
